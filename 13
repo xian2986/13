@@ -1,7 +1,9 @@
+//primero, en el void setup, se define lo que es una entrada y lo que es una salida, en el void up se pone las acciones a realizar. Primero un "si", para hacer que si el pulsador esta en HIGH se desactive todo, 
+despues se pone la entrada 13 en HIGH se espera 10 segundos y pasa a LOW. Se vuelve a leer la entrada 10 por si lo quieres parar y se hace lo mismo con la salida 11 y 12
 void setup()
 {
   pinMode(10, INPUT);
-  pinMode(LED_BUILTIN, OUTPUT);
+  pinMode(13, OUTPUT);
   pinMode(11, OUTPUT);
   pinMode(12, OUTPUT);
 }
@@ -9,9 +11,9 @@ void setup()
 void loop()
 {
   if (digitalRead(10) == LOW) {
-    digitalWrite(LED_BUILTIN, HIGH);
+    digitalWrite(13, HIGH);
     delay(10000); // Wait for 10000 millisecond(s)
-    digitalWrite(LED_BUILTIN, LOW);
+    digitalWrite(13, LOW);
     delay(4000); // Wait for 4000 millisecond(s)
     if (digitalRead(10) == LOW) {
       digitalWrite(11, HIGH);
